@@ -1,0 +1,33 @@
+<h1>Check out these desserts</h1>
+
+<h2>POST DESSERTS</h2>
+<input [(ngModel)]="newDessert.name" placeholder="Name">
+<input [(ngModel)]="newDessert.calories" placeholder="Calories">
+<input [(ngModel)]="newDessert.price" placeholder="Price">
+<input [(ngModel)]="newDessert.gluten_free" placeholder="Gluten Free?">
+<input [(ngModel)]="newDessert.contains_dairy" placeholder="Has dairy?">
+<button (click)='postDessert()'>Post</button>
+
+
+<h2>EDIT DESSERTS</h2>
+<input [(ngModel)]="currentDessert.name" placeholder="Name">
+<input [(ngModel)]="currentDessert.calories" placeholder="Calories">
+<input [(ngModel)]="currentDessert.price" placeholder="Price">
+<input [(ngModel)]="currentDessert.gluten_free" placeholder="Gluten Free?">
+<input [(ngModel)]="currentDessert.contains_dairy" placeholder="Has dairy?">
+<button (click)='editDessert()'>Submit</button>
+
+
+<table>
+	<tr *ngFor='let dessert of desserts'>
+		<td>{{dessert.name}}</td>
+		<td>{{dessert.calories}}</td>
+		<td>{{dessert.price}}</td>
+		<td>{{dessert.gluten_free}}</td>
+		<td>{{dessert.contains_dairy}}</td>
+		<td><button (click)='setDessert(dessert)'>Edit</button></td>
+		<td><button (click)='deleteDessert(dessert)'>Delete</button></td>
+	</tr>
+</table>
+
+
